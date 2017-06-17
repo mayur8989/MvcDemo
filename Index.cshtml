@@ -1,0 +1,20 @@
+﻿    
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/Users.js"></script>
+<h2>User</h2>
+
+Name:<input type="text" id="txtName"  /><br />
+PhoneNo:<input type="text" id="txtPhoneNo" /><br />
+City:<input type="text" id="txtCity" /><br />
+<input type="hidden" id="userid" />
+
+<button id="btnInsert" onclick="Insert()">Insert Data</button>
+
+<button id="btnUpdate" onclick="Update()" style="display:none">Update Data</button>
+
+
+<button onclick="GetAll()">Display Record</button>
+
+<div id="tblData">
+
+</div>
