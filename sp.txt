@@ -1,0 +1,25 @@
+Data Source=DESKTOP-1I8MHPF;Initial Catalog=MvcCrudOperation;Integrated Security=True
+
+
+USE [MvcCrudOperation]
+GO
+/****** Object:  StoredProcedure [sys].[sp_add_log_shipping_secondary_primary]    Script Date: 6/17/2017 5:30:59 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+CREATE procedure UpdateRecord
+(
+    @Id int, -- cannot be NULL
+    @Name varchar(max) = null,
+	@PhoneNo varchar(max) = null,
+	@City varchar(max) = null
+)
+as
+begin
+    set nocount on
+    
+	update [MvcCrudOperation].[dbo].[User] set Name = @Name, 
+	PhoneNo = @PhoneNo,City = @City where Id = @Id
+ 
+end
