@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <attribute name="class" value="example-theme"/>
+        <referenceContainer name="header-wrapper">
+            <container name="header.panel.logo.wrapper" label="Page Header logo Wrapper" htmlTag="div" htmlClass="header-logo-wrapper" before="-" >
+                <container name="header.panel.logo.container" label="Page Header logo Wrapper" htmlTag="div" htmlClass="header-logo-container">
+                    <block class="Magento\Theme\Block\Html\Header\Logo" name="logo">
+                        <arguments>
+                            <argument name="logo_file" xsi:type="string">images/logo.png</argument>
+                            <argument name="logo_img_width" xsi:type="number">150</argument>
+                            <argument name="logo_img_height" xsi:type="number">45</argument>
+                        </arguments>
+                    </block>
+                </container>
+            </container>
+        </referenceContainer>
+        
+        <move element="top.search" destination="header-wrapper" after="-"  />
+        <move element="form.subscribe" destination="footer.container.middle" after="-"  />
+        <move element="copyright" destination="footer.content.bottom" before="-" />
+        <referenceContainer name="footer-container">
+           <container name="footer.container.top" before="-" htmlTag="div" htmlId="footer-top-panel" htmlClass="top-footer-wrapper" label="Footer Container Top Full">
+             <container name="footer.content.top" htmlTag="div" htmlClass="footer content footer-content-top" label="Footer Content Top">
+                <container name="footer.content.top.upper.block" htmlTag="div" htmlClass="footer-content-top-upper-block" label="Footer Container Top Upper Block" />
+             </container>
+           </container>
+          <container name="footer.container.middle" after="footer.container.top" htmlTag="div" htmlId="footer-middle-panel" htmlClass="middle-footer-wrapper" label="Footer Container middle Full">
+             <container name="footer.content.middle" htmlTag="div" htmlClass="footer content footer-content-middle" label="Footer Content Middle">
+                <container name="footer.content.middle.upper.block" htmlTag="div" htmlClass="footer-content-middle-upper-block" label="Footer containeriner Middle Upper Block">
+                    <block class="Magento\Cms\Block\Block" name="MD.Fashtag.Footer.Middle.Section.Links">
+                        <arguments>
+                            <argument name="block_id" xsi:type="string">example-footer-middle-section-links</argument>
+                        </arguments>
+                    </block>
+                </container>
+             </container>
+            </container> 
+
+            <container name="footer.container.middle" label="Footer Container middle" after="footer.container.middle" htmlTag="div" htmlId="footer-bottom-panel" htmlClass="middle-footer-wrapper">
+            </container>
+
+            <container name="footer.container.bottom" label="Footer Container Bottom" after="footer.container.middle" htmlTag="div" htmlId="footer-bottom-panel" htmlClass="bottom-footer-wrapper">
+                <container name="footer.content.bottom" htmlTag="div" htmlClass="footer content footer-content-bottom" label="Footer Content Bottom">
+                    <block class="Magento\Cms\Block\Block" name="Example.Footer.Bottom.Section.Links">
+                        <arguments>
+                            <argument name="block_id" xsi:type="string">example-footer-bottom-section-links</argument>
+                        </arguments>
+                    </block>
+                </container>
+            </container>  
+        </referenceContainer> 
+       
+        <!-- <referenceBlock name="my-account-link" display="false" />-->
+        <referenceBlock name="wish-list-link" display="false" />
+        <referenceBlock name="header" remove="true"/>
+        <referenceBlock name="advanced-search-link" display="false"/>
+        <referenceBlock name="store.settings" remove="true"/>
+        <referenceBlock name="footer_links" remove="true" />
+        <referenceBlock name="report.bugs" remove="true"/>
+
+     </body>
+</page>
